@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>body background-color change</title>
+
+    <style>
+        body {
+            transition: background-color 0.5s;
+        }
+        #colorText{
+            margin-top: 22%;
+        }
+        .modalDiv{
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.1);
+            transition: transform 0.4s, top 0.4s;
+            z-index: 1;
+        }
+        .open-popup{
+            visibility: visible;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(1);
+        }
+    </style>
+
+</head>
+<body onkeyup="bodyBackChangeKeyUp(event)" onload="openModal()">
+
+    <!-- MODAL -->
+    <div id="myModal">
+        <div class="modalDiv w-2/5 h-2/4 bg-black rounded-md text-center px-8 text-white bg-cyan-950" id="modal">
+            <button id="closeModal" class="closeModal float-right bg-transparent text-3xl">&times;</button>
+            <div class="flex flex-col justify-center items-center h-2/4">
+                <h2 class="text-2xl mt-16">About this site</h2>
+                <p class="text-lg mt-10">This site makes extensive use of Tailwind, CSS and JavaScript. If you press the 'Enter' button, the background color of the body will be randomly selected and changed. And the name of the color is written in the middle of the body</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="container" class="flex justify-center">
+        <h1 id="colorText" class="text-2xl">Colors Name</h1>
+    </div>
+
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="./modal.js"></script>
+<script src="./bodyColors.js"></script>
+</body>
+</html>
